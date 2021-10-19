@@ -1,11 +1,13 @@
 package edu.toronto.csc207;
 
+import java.io.Serializable;
+
 /**
  * A user with a username and password.
  *
  * IMPORTANT: We are ignoring password encryption in this example. (See CSC209.)
  */
-public class User {
+public class User implements Serializable {
 
     /**
      * The username.
