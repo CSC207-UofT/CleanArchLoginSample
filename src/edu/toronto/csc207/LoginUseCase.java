@@ -1,11 +1,18 @@
 package edu.toronto.csc207;
 
+import java.io.IOException;
+
 public class LoginUseCase implements LoginInputBoundary {
 
     /**
      * A list of users organized by username.
      */
     private final UserList users;
+
+    /**
+     * Serializes and deserializes list of users
+     */
+    UserReadWriter readWriter = new UserReadWriter();
 
     /**
      * / The "output" of this use case.
@@ -18,6 +25,11 @@ public class LoginUseCase implements LoginInputBoundary {
 
     public LoginUseCase(UserList users) {
         this.users = users;
+        try {
+            readWriter.saveToFile("users.ser", users);
+        } catch (IOException e) {
+            System.out.println("User list did not save.");
+        }
     }
 
     /**

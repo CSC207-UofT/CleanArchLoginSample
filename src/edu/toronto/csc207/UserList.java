@@ -1,5 +1,6 @@
 package edu.toronto.csc207;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,7 @@ import java.util.Map;
 // What do we gain by defining this class and storing an instance of it
 // in the LogInUseCase class, as opposed to just
 // storing a Map<String, User> in the LogInUseCase class?
-public class UserList {
+public class UserList implements Serializable {
     private final Map<String, User> users = new HashMap<>();
 
     /**
