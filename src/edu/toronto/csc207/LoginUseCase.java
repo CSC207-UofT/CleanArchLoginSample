@@ -13,6 +13,7 @@ public class LoginUseCase implements LoginInputBoundary {
      * Serializes and deserializes list of users
      */
     UserReadWriter readWriter = new UserReadWriter();
+    //TODO: inject this object and change the type to ReadWriter interface.
 
     /**
      * / The "output" of this use case.
